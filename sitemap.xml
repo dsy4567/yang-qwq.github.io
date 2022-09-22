@@ -16,4 +16,12 @@
         <loc>https://board.yang-qwq.ml/</loc>
         <priority>0.50</priority>
     </url>
+    <url>
+        <loc>https://yang-qwq.ml/ps5-router/</loc>
+        <priority>0.45</priority>
+    </url>
+    <url>
+        <loc>https://yang-qwq.ml/114514/</loc>
+        <priority>0.45</priority>
+    </url>
 </urlset>
