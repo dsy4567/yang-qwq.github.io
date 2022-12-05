@@ -5,11 +5,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>阳的小站 | 备战中考，中考加油！</title>
+    <title>阳的小站 | 沉重悼念江泽民同志</title>
     <meta name="robots" content="index,follow" />
     <meta name="description" content="阳的小站 - 这是一个正在编程路上摸爬滚打的初中生的个人站" />
     <meta name="keywords" content="阳,Yang,个人站" />
     <meta name="format-detection" content="telephone=no" />
+    <style id="gray">
+        /* 沉重悼念江泽民同志，江泽民同志永垂不朽！ */
+        
+        body {
+            filter: grayscale(0.9);
+        }
+    </style>
     <link rel="shortcut icon" href="static/img/favicon.ico" />
     <link rel="icon" href="static/img/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
@@ -218,17 +225,17 @@
                             <div tabindex="0" role="navigation" class="box" id="placeholder" style="background-color: rgb(65, 125, 255)">
                                 <h2>
                                     占位符<i class="fa fa-fw
-                                                                        fa-external-link" aria-hidden="true"></i>
+                                            fa-external-link" aria-hidden="true"></i>
                                 </h2>
                                 <p>该按钮无功能</p>
                             </div>
                         </div>
                         <hr />
 
-                        <h2>听歌</h2>
+                        <!-- <h2>听歌</h2>
                         <meting-js server="netease" type="playlist" id="7123866465" autoplay="false" order="random" preload="metadata">
                         </meting-js>
-                        <hr />
+                        <hr /> -->
 
                         <!-- <h2>【公告】关于潜在的被人肉搜索的可能</h2>
                         <p>由于近期同组织的几位小伙伴接连被人肉搜索，网络暴力等一系列手段残害</p>
@@ -396,6 +403,7 @@
                     本站CDN服务由<a target="_blank" href="https://www.cloudflare.com/zh-cn/" rel="noopener noreferrer">CloudFlare</a>提供&nbsp;
                     <a href="https://icp.gov.moe/?keyword=20220385" target="_blank" rel="noopener noreferrer">萌ICP备20220385号</a>
                 </div>
+                <div><a href="#" onclick="$('#gray').remove()">感到不适？点我移除灰色滤镜</a></div>
             </div>
         </footer>
     </div>
@@ -417,7 +425,7 @@
     <script async src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
     <!-- 看板娘 -->
-    <script defer async src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js" crossorigin="anonymous"></script>
+    <!-- <script defer async src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js" crossorigin="anonymous"></script> -->
 
     <script type="text/javascript" defer async>
         console.log(
@@ -437,6 +445,9 @@
             "",
             "1.0.0"
         );
+    </script>
+    <script async>
+        swal('', '沉重悼念江泽民同志，江泽民同志永垂不朽！ ')
     </script>
     <!-- <script async>
         (function($) {
@@ -558,7 +569,7 @@
             showCursor: true,
         });
     </script>
-    <script async>
+    <!-- <script async>
         // 浏览器搞笑标题
         var OriginTitle = document.title;
         var titleTime;
@@ -575,7 +586,7 @@
                 }, 2000);
             }
         });
-    </script>
+    </script> -->
     <script async defer>
         new Calendar({
             // 设置显示位置
