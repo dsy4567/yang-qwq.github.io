@@ -85,8 +85,7 @@ strong {
 
 #nav.not_index_bg {
     height: 20rem;
-    /* background-image: url(https://api.ixiaowai.cn/api/api.php); */
-    background-image: url(../img/gray.png);
+    background-image: url(https://api.ixiaowai.cn/api/api.php);
 }
 
 #nav {
