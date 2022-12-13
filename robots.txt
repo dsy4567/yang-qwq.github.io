@@ -2,5 +2,4 @@ User-agent: *
 Disallow:
 
 Sitemap: https://yang-qwq.ml/sitemap.xml
-Sitemap: https://blog.yang-qwq.ml/sitemap.xml
-Sitemap: https://blog.yang-qwq.ml/sitemap.rss
+Sitemap: https://luotianyi.online/sitemap.xml
