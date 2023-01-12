@@ -12,22 +12,27 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="static/img/favicon.ico" />
     <link rel="icon" href="static/img/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="static/css/index.css" />
 
     <!-- css -->
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.css"
+        crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="static/css/calendar.min.css" />
 
     <!-- jQuery -->
     <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.pack.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.pack.js"
+        crossorigin="anonymous"></script>
 
     <!--鼠标点击效果-->
-    <script async src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.min.js" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.min.js"
+        crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.11" crossorigin="anonymous"></script>
@@ -38,7 +43,7 @@
 
     <!-- 日期格式化 -->
     <script>
-        Date.prototype.Format = function(fmt) {
+        Date.prototype.Format = function (fmt) {
             //author: meizz
             var o = {
                 "M+": this.getMonth() + 1, //月份
@@ -59,8 +64,8 @@
                     fmt = fmt.replace(
                         RegExp.$1,
                         RegExp.$1.length == 1 ?
-                        o[k] :
-                        ("00" + o[k]).substr(("" + o[k]).length)
+                            o[k] :
+                            ("00" + o[k]).substr(("" + o[k]).length)
                     );
             return fmt;
         };
@@ -97,7 +102,8 @@
                             </div>
 
                             <div class="card-info-social-icons is-center">
-                                <a title="github" class="social-icon" href="https://github.com/Yang_161941" target="_blank" rel="noopener noreferrer">
+                                <a title="github" class="social-icon" href="https://github.com/Yang_161941"
+                                    target="_blank" rel="noopener noreferrer">
                                     <i class="fa fa-github"></i>
                                 </a>
                                 <span>|</span>
@@ -172,9 +178,11 @@
                             </div>
                             <div class="webinfo">
                                 <ul>
-                                    <li><a title="YuxiangWang_0525的博客" class="social-icon" href="https://blog.yuxiangwang0525.com/">YuxiangWang_0525的博客</a>
+                                    <li><a title="YuxiangWang_0525的博客" class="social-icon"
+                                            href="https://blog.yuxiangwang0525.com/">YuxiangWang_0525的博客</a>
                                     </li>
-                                    <li><a title="luomoの云日常" class="social-icon" href="https://luotianyi.online/">luomoの云日常</a>
+                                    <li><a title="luomoの云日常" class="social-icon"
+                                            href="https://luotianyi.online/">luomoの云日常</a>
                                     </li>
                                 </ul>
                             </div>
@@ -203,13 +211,14 @@
                                 <p>新框架留言板，给你一个全新的体验</p>
                             </div>
 
-                            <div tabindex="0" role="navigation" class="box" id="website_blog" style="background-color: rgb(234, 154,
-                                    102)">
-                                <h2>Yang blog</h2>
-                                <s>这玩意已经寄了，不用进了</s>
+                            <div tabindex="0" role="navigation" class="box" id="website_block_server_wiki"
+                                style="background-color: #4abf8a">
+                                <h2>方块元玩家文档</h2>
+                                <s>方块元玩家文档</s>
                             </div>
 
-                            <div tabindex="0" role="navigation" class="box" id="website_status" style="background-color: rgb(59, 214, 113)">
+                            <div tabindex="0" role="navigation" class="box" id="website_status"
+                                style="background-color: rgb(59, 214, 113)">
                                 <h2>
                                     服务器在线状态<i class="fa fa-fw
                                             fa-external-link" aria-hidden="true"></i>
@@ -217,7 +226,8 @@
                                 <p>在这里查看所有服务器以及站点的状态</p>
                             </div>
 
-                            <div tabindex="0" role="navigation" class="box" id="cloudreve" style="background-color: rgb(65, 125, 255)">
+                            <div tabindex="0" role="navigation" class="box" id="cloudreve"
+                                style="background-color: rgb(65, 125, 255)">
                                 <h2>
                                     我的私人网盘
                                 </h2>
@@ -227,7 +237,8 @@
                         <hr />
 
                         <h2>听歌</h2>
-                        <meting-js server="netease" type="playlist" id="7123866465" autoplay="false" order="random" preload="metadata">
+                        <meting-js server="netease" type="playlist" id="7123866465" autoplay="false" order="random"
+                            preload="metadata">
                         </meting-js>
                         <hr />
 
@@ -257,7 +268,8 @@
                                 <a title="原神官网" href="https://ys.mihoyo.com/">原神</a>&nbsp;
                             </li>
                             <li><a title="osu!" href="https://osu.ppy.sh/">osu!</a></li>
-                            <li><a title="CS:GO" href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/">CS:GO</a>
+                            <li><a title="CS:GO"
+                                    href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/">CS:GO</a>
                             </li>
                         </ul>
                         <hr />
@@ -368,9 +380,12 @@
                         <h2>读书&刷题</h2>
                         <div class="tool">
                             <a href="https://www.r2coding.com/" target="_blank" rel="noopener noreferrer">编程自学之路</a>
-                            <a href="https://github.com/justjavac/free-programming-books-zh_CN/" target="_blank" rel="noopener noreferrer">编程中文书籍索引</a>
-                            <a href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener noreferrer">Leetcode</a>
-                            <a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank" rel="noopener noreferrer">剑指 Offer</a>
+                            <a href="https://github.com/justjavac/free-programming-books-zh_CN/" target="_blank"
+                                rel="noopener noreferrer">编程中文书籍索引</a>
+                            <a href="https://leetcode-cn.com/problemset/all/" target="_blank"
+                                rel="noopener noreferrer">Leetcode</a>
+                            <a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank"
+                                rel="noopener noreferrer">剑指 Offer</a>
                         </div>
                         <hr />
 
@@ -389,20 +404,24 @@
             <div id="footer-wrap">
                 <div class="copyright">
                     &copy;Yang 2019 - 2022 | Powered by
-                    <a target="_blank" href="https://github.com/mrxur/home" rel="noopener noreferrer">mrxur/home</a>&nbsp;
+                    <a target="_blank" href="https://github.com/mrxur/home"
+                        rel="noopener noreferrer">mrxur/home</a>&nbsp;
                     <a target="_blank" href="sitemap.xml" rel="noopener noreferrer">Sitemap.xml</a>&nbsp;
                     <a target="_blank" href="https://github.yang-qwq.ml/" rel="noopener noreferrer">github镜像站</a>
                 </div>
                 <div>
-                    本站CDN服务由<a target="_blank" href="https://www.cloudflare.com/zh-cn/" rel="noopener noreferrer">CloudFlare</a>提供&nbsp;
-                    <a href="https://icp.gov.moe/?keyword=20220385" target="_blank" rel="noopener noreferrer">萌ICP备20220385号</a>
+                    本站CDN服务由<a target="_blank" href="https://www.cloudflare.com/zh-cn/"
+                        rel="noopener noreferrer">CloudFlare</a>提供&nbsp;
+                    <a href="https://icp.gov.moe/?keyword=20220385" target="_blank"
+                        rel="noopener noreferrer">萌ICP备20220385号</a>
                 </div>
             </div>
         </footer>
     </div>
 
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script async src="https://unpkg.com/instant.page@5.1.0/instantpage.js" type="module" crossorigin="anonymous"></script>
+    <script async src="https://unpkg.com/instant.page@5.1.0/instantpage.js" type="module"
+        crossorigin="anonymous"></script>
     <script async src="https://unpkg.com/lazysizes@5.2.0/lazysizes.min.js" crossorigin="anonymous"></script>
 
     <!-- APlayer -->
@@ -418,7 +437,8 @@
     <script async src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
     <!-- 看板娘 -->
-    <script defer async src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js" crossorigin="anonymous"></script>
+    <script defer async src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js"
+        crossorigin="anonymous"></script>
 
     <script type="text/javascript" defer async>
         console.log(
@@ -440,8 +460,8 @@
         );
     </script>
     <script async>
-        (function($) {
-            $.fn.snow = function(options) {
+        (function ($) {
+            $.fn.snow = function (options) {
                 var $flake = $('<div id="snowbox" />')
                     .css({
                         position: "absolute",
@@ -455,10 +475,10 @@
                         minSize: 10,
                         maxSize: 20,
                         newOn: 1000,
-                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */ ,
+                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */,
                     },
                     options = $.extend({}, defaults, options);
-                var interval = setInterval(function() {
+                var interval = setInterval(function () {
                     var startPositionLeft = Math.random() * documentWidth - 100,
                         startOpacity = 0.5 + Math.random(),
                         sizeFlake = options.minSize + Math.random() * options.maxSize,
@@ -475,13 +495,13 @@
                             color: options.flakeColor,
                         })
                         .animate({
-                                top: endPositionTop,
-                                left: endPositionLeft,
-                                opacity: 0.2,
-                            },
+                            top: endPositionTop,
+                            left: endPositionLeft,
+                            opacity: 0.2,
+                        },
                             durationFall,
                             "linear",
-                            function() {
+                            function () {
                                 $(this).remove();
                             }
                         );
@@ -489,11 +509,11 @@
             };
         })(jQuery);
 
-        $(function() {
+        $(function () {
             $.fn.snow({
-                minSize: 5 /* 定义雪花最小尺寸 */ ,
-                maxSize: 50 /* 定义雪花最大尺寸 */ ,
-                newOn: 800 /* 定义密集程度，数字越小越密集 */ ,
+                minSize: 5 /* 定义雪花最小尺寸 */,
+                maxSize: 50 /* 定义雪花最大尺寸 */,
+                newOn: 800 /* 定义密集程度，数字越小越密集 */,
             });
         });
     </script>
@@ -563,7 +583,7 @@
         // 浏览器搞笑标题
         var OriginTitle = document.title;
         var titleTime;
-        document.addEventListener("visibilitychange", function() {
+        document.addEventListener("visibilitychange", function () {
             if (document.hidden) {
                 // $('[rel="icon"]').attr('href', "static/img/wtf.ico");
                 document.title = "╭(°A°`)╮ 页面崩溃啦 ~";
@@ -571,7 +591,7 @@
             } else {
                 // $('[rel="icon"]').attr('href', "static/img/favicon.ico");
                 document.title = "(ฅ>ω<*ฅ) 噫又好啦 ~" + OriginTitle;
-                titleTime = setTimeout(function() {
+                titleTime = setTimeout(function () {
                     document.title = OriginTitle;
                 }, 2000);
             }
@@ -591,38 +611,38 @@
     </script>
     <script>
         // 基于js的点击事件
-        $("#website_board").on("click", function() {
+        $("#website_board").on("click", function () {
             window.open("https://board.yang-qwq.ml/", "_self");
         });
 
-        $("#website_blog").on("click", function() {
-            window.open("https://blog.yang-qwq.ml/", "_self");
+        $("#website_block_server_wiki").on("click", function () {
+            window.open("./block-server-wiki/", "_self");
         });
 
-        $("#website_status").on("click", function() {
+        $("#website_status").on("click", function () {
             window.open("https://stats.uptimerobot.com/kKoX9ukrwm", "_blank");
         });
 
-        $("#cloudreve").on("click", function() {
+        $("#cloudreve").on("click", function () {
             window.open("http://cloudreve.yang-qwq.ml/", "_blank");
         });
     </script>
-    <script>
+    <!-- <script>
         // 复制uid
         var uidClipboard = new ClipboardJS('.copy-genshin-uid');
 
-        uidClipboard.on('success', function(e) {
+        uidClipboard.on('success', function (e) {
             e.clearSelection();
             swal("复制成功", "", "success")
             document.querySelector('.copy-genshin-uid').remove();
         });
 
-        uidClipboard.on('error', function(e) {
+        uidClipboard.on('error', function (e) {
             console.error('Action:', e.action);
             console.error('Trigger:', e.trigger);
             swal("Oops...", "复制出现错误！", "error")
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
