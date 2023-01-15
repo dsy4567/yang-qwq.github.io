@@ -4,8 +4,16 @@
         <loc>https://yang-qwq.ml/</loc>
         <priority>1.00</priority>
     </url>
-        <url>
+    <url>
         <loc>https://yang-qwq.ml/block-server-wiki/</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://yang-qwq.top/block-server-wiki/</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://yang-qwq.top/block-server-wiki/</loc>
         <priority>0.80</priority>
     </url>
     <url>
