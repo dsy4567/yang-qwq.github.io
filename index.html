@@ -162,9 +162,26 @@
                                     <div class="webinfo-site-name">本站总在线时长 :</div>
                                     <div id="onlinetimer"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-widget card-webinfo">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                <span>域名过期时长</span>
+                            </div>
+                            <div class="webinfo">
+                                <h3>yang-qwq.ml</h3>
                                 <div class="webinfo-item">
                                     <div class="webinfo-site-name">本域名过期时间 :</div>
                                     <div id="domainexpiredtimer"></div>
+                                </div>
+                                <h3>yang-qwq.top</h3>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">本域名过期时间 :</div>
+                                    <div id="domainexpiredtimer_2"></div>
                                 </div>
                             </div>
                         </div>
@@ -555,6 +572,10 @@
         }, 1000)
 
         setInterval(() => {
+            descTime('2024-1-15 11:06:37', document.getElementById('domainexpiredtimer_2'))
+        }, 1000)
+
+        setInterval(() => {
             ascTime("2021-12-19 08:00:00", document.getElementById("onlinetimer"));
         }, 1000);
     </script>
@@ -596,8 +617,17 @@
                 }, 2000);
             }
         });
+
+        // 检查域名
+        if (document.domain == 'yang-qwq.ml' || 'localhost') {
+            swal("本站有新域名了！", "请查看页脚获取详细内容", "info");
+            document.getElementById('footer-wrap').insertAdjacentHTML("beforeend", "<div><a href='https://yang-qwq.top/' \
+                title='感谢wyx的大力赞助！' target='_self' rel='noopener noreferrer'>前往新域名</a></div>")
+        } else if (document.domain == 'yang-qwq.top') {
+            swal("欢迎使用新域名访问~", "感谢wyx的大力赞助！", "success")
+        }
     </script>
-    <script async defer>
+    <script async>
         new Calendar({
             // 设置显示位置
             parent: "dates-view",
