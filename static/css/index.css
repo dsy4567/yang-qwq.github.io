@@ -12,7 +12,10 @@ body {
     background: #eee;
     color: #4c4948;
     font-size: 14px;
-    font-family: Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, "Microsoft JhengHei", "MicrMicrosoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Lato, Helvetica Neue For Number, -apple-system,
+        BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB,
+        "Microsoft JhengHei", "MicrMicrosoft YaHei", Helvetica Neue, Helvetica,
+        Arial, sans-serif;
     line-height: 2;
 }
 
@@ -57,7 +60,6 @@ hr {
     height: 0;
     overflow: visible;
 }
-
 
 /* body, li, span, p {
     cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur),auto;
@@ -231,7 +233,7 @@ h1 {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.tool a {
+a {
     color: #ff0066;
 }
 
@@ -240,6 +242,7 @@ h1 {
 }
 
 .box {
+    color: #000 !important;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -368,7 +371,6 @@ aside_content .card-info .author-info__description {
     animation: main 1s;
 }
 
-
 /* @media screen and (min-width: 768px) {
     #site-title {
         font-size: 2rem;
@@ -412,7 +414,6 @@ aside_content .card-info .author-info__description {
     }
 }
 
-
 /* 电脑等大屏幕设备 */
 
 @media screen and (min-width: 900px) {
@@ -441,4 +442,34 @@ aside_content .card-info .author-info__description {
 
 ::-webkit-scrollbar-track {
     background-color: transparent;
+}
+
+/* 自适应深色主题 */
+
+@media (prefers-color-scheme: dark) {
+    #aside_content .card-widget,
+    #page {
+        background-color: #333 !important;
+    }
+    body {
+        background-color: #111 !important;
+        color: #eee !important;
+    }
+
+    .skillbar {
+        background-color: #111 !important;
+    }
+
+    .skillbar .skill-bar-percent {
+        color: #eee !important;
+    }
+
+    .cal-md {
+        background-color: #111 !important;
+    }
+    /* .cal-year,
+    .cal-month,
+    .cal-date {
+        color: #eee !important;
+    } */
 }

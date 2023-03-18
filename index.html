@@ -1,667 +1,982 @@
 ﻿<!DOCTYPE html>
 <html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>阳的小站 | 备战中考，中考加油！</title>
+        <meta name="robots" content="index,follow" />
+        <meta
+            name="description"
+            content="阳的小站 - 这是一个正在编程路上摸爬滚打的初中生的个人站"
+        />
+        <meta name="keywords" content="阳,Yang,个人站" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="shortcut icon" href="static/img/favicon.ico" />
+        <link rel="icon" href="static/img/favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="static/css/index.css" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>阳的小站 | 备战中考，中考加油！</title>
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="阳的小站 - 这是一个正在编程路上摸爬滚打的初中生的个人站" />
-    <meta name="keywords" content="阳,Yang,个人站" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="shortcut icon" href="static/img/favicon.ico" />
-    <link rel="icon" href="static/img/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="static/css/index.css" />
+        <!-- css -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.css"
+            crossorigin="anonymous"
+        />
 
-    <!-- css -->
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.css"
-        crossorigin="anonymous" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="static/css/calendar.min.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="static/css/calendar.min.css" />
+        <!-- jQuery -->
+        <script
+            src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.pack.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- jQuery -->
-    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.pack.js"
-        crossorigin="anonymous"></script>
+        <!--鼠标点击效果-->
+        <script
+            async
+            src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <!--鼠标点击效果-->
-    <script async src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.min.js"
-        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+        <script
+            src="https://unpkg.com/typed.js@2.0.11"
+            crossorigin="anonymous"
+        ></script>
+        <script src="static/js/calendar.min.js"></script>
 
-    <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.11" crossorigin="anonymous"></script>
-    <script src="static/js/calendar.min.js"></script>
+        <!-- 剪贴板复制 -->
+        <script src="https://unpkg.com/clipboard@2.0.10/dist/clipboard.min.js"></script>
 
-    <!-- 剪贴板复制 -->
-    <script src="https://unpkg.com/clipboard@2.0.10/dist/clipboard.min.js"></script>
-
-    <!-- 日期格式化 -->
-    <script>
-        Date.prototype.Format = function (fmt) {
-            //author: meizz
-            var o = {
-                "M+": this.getMonth() + 1, //月份
-                "d+": this.getDate(), //日
-                "h+": this.getHours(), //小时
-                "m+": this.getMinutes(), //分
-                "s+": this.getSeconds(), //秒
-                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-                S: this.getMilliseconds(), //毫秒
-            };
-            if (/(y+)/.test(fmt))
-                fmt = fmt.replace(
-                    RegExp.$1,
-                    (this.getFullYear() + "").substr(4 - RegExp.$1.length)
-                );
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt))
+        <!-- 日期格式化 -->
+        <script>
+            Date.prototype.Format = function (fmt) {
+                //author: meizz
+                var o = {
+                    "M+": this.getMonth() + 1, //月份
+                    "d+": this.getDate(), //日
+                    "h+": this.getHours(), //小时
+                    "m+": this.getMinutes(), //分
+                    "s+": this.getSeconds(), //秒
+                    "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                    S: this.getMilliseconds(), //毫秒
+                };
+                if (/(y+)/.test(fmt))
                     fmt = fmt.replace(
                         RegExp.$1,
-                        RegExp.$1.length == 1 ?
-                            o[k] :
-                            ("00" + o[k]).substr(("" + o[k]).length)
+                        (this.getFullYear() + "").substr(4 - RegExp.$1.length)
                     );
-            return fmt;
-        };
-    </script>
+                for (var k in o)
+                    if (new RegExp("(" + k + ")").test(fmt))
+                        fmt = fmt.replace(
+                            RegExp.$1,
+                            RegExp.$1.length == 1
+                                ? o[k]
+                                : ("00" + o[k]).substr(("" + o[k]).length)
+                        );
+                return fmt;
+            };
+        </script>
 
-    <script type="text/javascript">
-        if (!!window.ActiveXObject || "ActiveXObject" in window) {
-            alert("朋友，请不要使用IE呢~");
-            window.close();
-        }
-    </script>
-</head>
+        <script type="text/javascript">
+            if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                alert("朋友，请不要使用IE呢~");
+                window.close();
+            }
+        </script>
+    </head>
 
-<body>
-    <div id="body-wrap">
-        <nav class="not_index_bg" id="nav">
-            <div id="page_site-info">
-                <div id="site-title">
-                    <span class="blogtitle"></span>
+    <body>
+        <div id="body-wrap">
+            <nav class="not_index_bg" id="nav">
+                <div id="page_site-info">
+                    <div id="site-title">
+                        <span class="blogtitle"></span>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <main id="content-outer">
-            <div class="layout_page" id="content-inner">
-                <div class="aside_content" id="aside_content">
-                    <div class="card-widget card-info">
-                        <div class="card-content">
-                            <div class="card-info-avatar is-center">
-                                <img class="avatar-img" src="static/img/head.webp" alt="头像" />
-                                <div class="author-info__name">Yang</div>
-                                <div class="author-info__description">
-                                    一个正在编程路上摸爬滚打的初中学生
-                                </div>
-                            </div>
-
-                            <div class="card-info-social-icons is-center">
-                                <a title="github" class="social-icon" href="https://github.com/Yang_161941"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                                <span>|</span>
-                                <a title="steam" class="social-icon" href="https://steamcommunity.com/id/yang_qwq/">
-                                    <i class="fa fa-steam-square"></i>
-                                </a>
-                                <span>|</span>
-                                <a title="bilibili" class="social-icon" href="https://space.bilibili.com/484660963">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <span>|</span>
-                                <a title="本站邮箱" class="social-icon" href="mailto:me@yang-qwq.ml">
-                                    <i class="fa fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-widget card-announcement">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                                <span>一言</span>
-                            </div>
-                            <div id="hitokoto"></div>
-                        </div>
-                    </div>
-
-                    <div class="card-widget card-announcement">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-commenting" aria-hidden="true"></i>
-                                <span>今日诗词</span>
-                            </div>
-                            <div id="jinrishici-sentence"></div>
-                        </div>
-                    </div>
-
-                    <div class="card-widget card-webinfo">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                                <span>站点信息</span>
-                            </div>
-                            <div class="webinfo">
-                                <div class="webinfo-item">
-                                    <div class="webinfo-site-uv-name">本站访客数 :
+            </nav>
+            <main id="content-outer">
+                <div class="layout_page" id="content-inner">
+                    <div class="aside_content" id="aside_content">
+                        <div class="card-widget card-info">
+                            <div class="card-content">
+                                <div class="card-info-avatar is-center">
+                                    <img
+                                        class="avatar-img"
+                                        src="static/img/head.webp"
+                                        alt="头像"
+                                    />
+                                    <div class="author-info__name">Yang</div>
+                                    <div class="author-info__description">
+                                        一个正在编程路上摸爬滚打的初中学生
                                     </div>
-                                    <div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div>
                                 </div>
-                                <div class="webinfo-item">
-                                    <div class="webinfo-site-name">本站总访问量 :</div>
-                                    <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div>
+
+                                <div class="card-info-social-icons is-center">
+                                    <a
+                                        title="github"
+                                        class="social-icon"
+                                        href="https://github.com/Yang_161941"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                    <span>|</span>
+                                    <a
+                                        title="steam"
+                                        class="social-icon"
+                                        href="https://steamcommunity.com/id/yang_qwq/"
+                                    >
+                                        <i class="fa fa-steam-square"></i>
+                                    </a>
+                                    <span>|</span>
+                                    <a
+                                        title="bilibili"
+                                        class="social-icon"
+                                        href="https://space.bilibili.com/484660963"
+                                    >
+                                        <i class="fa fa-link"></i>
+                                    </a>
+                                    <span>|</span>
+                                    <a
+                                        title="本站邮箱"
+                                        class="social-icon"
+                                        href="mailto:me@yang-qwq.ml"
+                                    >
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
                                 </div>
-                                <div class="webinfo-item">
-                                    <div class="webinfo-site-name">本站总在线时长 :</div>
-                                    <div id="onlinetimer"></div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget card-announcement">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-bullhorn"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>一言</span>
                                 </div>
+                                <div id="hitokoto"></div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget card-announcement">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-commenting"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>今日诗词</span>
+                                </div>
+                                <div id="jinrishici-sentence"></div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget card-webinfo">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-line-chart"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>站点信息</span>
+                                </div>
+                                <div class="webinfo">
+                                    <div class="webinfo-item">
+                                        <div class="webinfo-site-uv-name">
+                                            本站访客数 :
+                                        </div>
+                                        <div
+                                            class="webinfo-site-uv-count"
+                                            id="busuanzi_value_site_uv"
+                                        ></div>
+                                    </div>
+                                    <div class="webinfo-item">
+                                        <div class="webinfo-site-name">
+                                            本站总访问量 :
+                                        </div>
+                                        <div
+                                            class="webinfo-site-pv-count"
+                                            id="busuanzi_value_site_pv"
+                                        ></div>
+                                    </div>
+                                    <div class="webinfo-item">
+                                        <div class="webinfo-site-name">
+                                            本站总在线时长 :
+                                        </div>
+                                        <div id="onlinetimer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget card-webinfo">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-line-chart"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>域名过期时长</span>
+                                </div>
+                                <div class="webinfo">
+                                    <h3>yang-qwq.ml</h3>
+                                    <div class="webinfo-item">
+                                        <div class="webinfo-site-name">
+                                            本域名过期时间 :
+                                        </div>
+                                        <div id="domainexpiredtimer"></div>
+                                    </div>
+                                    <h3>yang-qwq.top</h3>
+                                    <div class="webinfo-item">
+                                        <div class="webinfo-site-name">
+                                            本域名过期时间 :
+                                        </div>
+                                        <div id="domainexpiredtimer_2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget card-webinfo">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-link"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>友链列表</span>
+                                </div>
+                                <div class="webinfo">
+                                    <ul>
+                                        <li>
+                                            <a
+                                                title="YuxiangWang_0525的博客"
+                                                class="social-icon"
+                                                href="https://blog.yuxiangwang0525.com/"
+                                                >YuxiangWang_0525的博客</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                title="luomoの云日常"
+                                                class="social-icon"
+                                                href="https://luotianyi.online/"
+                                                >luomoの云日常</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-widget">
+                            <div class="card-content">
+                                <div class="item-headline">
+                                    <i
+                                        class="fa fa-calendar"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span>一个不起眼的日历</span>
+                                </div>
+                                <p></p>
+                                <div id="dates-view"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-widget card-webinfo">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                                <span>域名过期时长</span>
-                            </div>
-                            <div class="webinfo">
-                                <h3>yang-qwq.ml</h3>
-                                <div class="webinfo-item">
-                                    <div class="webinfo-site-name">本域名过期时间 :</div>
-                                    <div id="domainexpiredtimer"></div>
+                    <article id="page">
+                        <div class="article-container">
+                            <h2>子站点导航</h2>
+                            <div class="sites-contair">
+                                <div
+                                    tabindex="0"
+                                    role="navigation"
+                                    class="box"
+                                    id="website_board"
+                                    style="background-color: rgb(255, 248, 172)"
+                                >
+                                    <h2>留言板</h2>
+                                    <p>新框架留言板，给你一个全新的体验</p>
                                 </div>
-                                <h3>yang-qwq.top</h3>
-                                <div class="webinfo-item">
-                                    <div class="webinfo-site-name">本域名过期时间 :</div>
-                                    <div id="domainexpiredtimer_2"></div>
+
+                                <div
+                                    tabindex="0"
+                                    role="navigation"
+                                    class="box"
+                                    id="website_block_server_wiki"
+                                    style="background-color: #4abf8a"
+                                >
+                                    <h2>方块元玩家文档</h2>
+                                    <s>方块元玩家文档</s>
+                                </div>
+
+                                <div
+                                    tabindex="0"
+                                    role="navigation"
+                                    class="box"
+                                    id="website_status"
+                                    style="background-color: rgb(59, 214, 113)"
+                                >
+                                    <h2>
+                                        服务器在线状态<i
+                                            class="fa fa-fw fa-external-link"
+                                            aria-hidden="true"
+                                        ></i>
+                                    </h2>
+                                    <p>在这里查看所有服务器以及站点的状态</p>
+                                </div>
+
+                                <div
+                                    tabindex="0"
+                                    role="navigation"
+                                    class="box"
+                                    id="cloudreve"
+                                    style="background-color: rgb(65, 125, 255)"
+                                >
+                                    <h2>我的私人网盘</h2>
+                                    <s>你或许可以试着进一下？</s>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <hr />
 
-                    <div class="card-widget card-webinfo">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-link" aria-hidden="true"></i>
-                                <span>友链列表</span>
-                            </div>
-                            <div class="webinfo">
-                                <ul>
-                                    <li><a title="YuxiangWang_0525的博客" class="social-icon"
-                                            href="https://blog.yuxiangwang0525.com/">YuxiangWang_0525的博客</a>
-                                    </li>
-                                    <li><a title="luomoの云日常" class="social-icon"
-                                            href="https://luotianyi.online/">luomoの云日常</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                            <h2>听歌</h2>
+                            <meting-js
+                                server="netease"
+                                type="playlist"
+                                id="7123866465"
+                                autoplay="false"
+                                order="random"
+                                preload="metadata"
+                            >
+                            </meting-js>
+                            <hr />
 
-                    <div class="card-widget">
-                        <div class="card-content">
-                            <div class="item-headline">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>一个不起眼的日历</span>
-                            </div>
-                            <p></p>
-                            <div id="dates-view"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <article id="page">
-                    <div class="article-container">
-                        <h2>子站点导航</h2>
-                        <div class="sites-contair">
-                            <div tabindex="0" role="navigation" class="box" id="website_board" style="background-color: rgb(255, 248,
-                                    172)">
-                                <h2>留言板</h2>
-                                <p>新框架留言板，给你一个全新的体验</p>
-                            </div>
-
-                            <div tabindex="0" role="navigation" class="box" id="website_block_server_wiki"
-                                style="background-color: #4abf8a">
-                                <h2>方块元玩家文档</h2>
-                                <s>方块元玩家文档</s>
-                            </div>
-
-                            <div tabindex="0" role="navigation" class="box" id="website_status"
-                                style="background-color: rgb(59, 214, 113)">
-                                <h2>
-                                    服务器在线状态<i class="fa fa-fw
-                                            fa-external-link" aria-hidden="true"></i>
-                                </h2>
-                                <p>在这里查看所有服务器以及站点的状态</p>
-                            </div>
-
-                            <div tabindex="0" role="navigation" class="box" id="cloudreve"
-                                style="background-color: rgb(65, 125, 255)">
-                                <h2>
-                                    我的私人网盘
-                                </h2>
-                                <s>你或许可以试着进一下？</s>
-                            </div>
-                        </div>
-                        <hr />
-
-                        <h2>听歌</h2>
-                        <meting-js server="netease" type="playlist" id="7123866465" autoplay="false" order="random"
-                            preload="metadata">
-                        </meting-js>
-                        <hr />
-
-                        <!-- <h2>【公告】关于潜在的被人肉搜索的可能</h2>
+                            <!-- <h2>【公告】关于潜在的被人肉搜索的可能</h2>
                         <p>由于近期同组织的几位小伙伴接连被人肉搜索，网络暴力等一系列手段残害</p>
                         <p>所以我尽可能清理了我自己和小伙伴们的线上的一切可关联到三次元的残留信息，望各位周知</p>
                         <hr /> -->
 
-                        <h2>关于我</h2>
-                        <p>我喜欢编程，MC，音游，聊天等一系列项目，目前还在努力学习和钻研技术中，望各位大佬指教 哎嘿~</p>
-                        <p>目前正在备战中考，暂时不能过多上线，希望大家可以理解（毕竟我所在的地区中考压力还是挺大的）</p>
-                        <p>有关于我的联系方式可以在本页面下的头像下面找到哦 ~</p>
-                        <h3>我擅长的项目</h3>
-                        <ol>
-                            <li>Python</li>
-                            <li>linux</li>
-                            <li>PHP（学习中）</li>
+                            <h2>关于我</h2>
+                            <p>
+                                我喜欢编程，MC，音游，聊天等一系列项目，目前还在努力学习和钻研技术中，望各位大佬指教
+                                哎嘿~
+                            </p>
+                            <p>
+                                目前正在备战中考，暂时不能过多上线，希望大家可以理解（毕竟我所在的地区中考压力还是挺大的）
+                            </p>
+                            <p>
+                                有关于我的联系方式可以在本页面下的头像下面找到哦
+                                ~
+                            </p>
+                            <h3>我擅长的项目</h3>
+                            <ol>
+                                <li>Python</li>
+                                <li>linux</li>
+                                <li>PHP（学习中）</li>
 
-                            <!-- 喂这怎么一回事啊！！！ -->
-                            <li>白嫖（？</li>
-                        </ol>
+                                <!-- 喂这怎么一回事啊！！！ -->
+                                <li>白嫖（？</li>
+                            </ol>
 
-                        <h3>我喜欢的游戏</h3>
-                        <ul>
-                            <li><a title="Minecraft 官网" href="https://www.minecraft.net/zh-hans">Minecraft</a></li>
-                            <li>
-                                <a title="原神官网" href="https://ys.mihoyo.com/">原神</a>&nbsp;
-                            </li>
-                            <li><a title="osu!" href="https://osu.ppy.sh/">osu!</a></li>
-                            <li><a title="CS:GO"
-                                    href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/">CS:GO</a>
-                            </li>
-                        </ul>
-                        <hr />
+                            <h3>我喜欢的游戏</h3>
+                            <ul>
+                                <li>
+                                    <a
+                                        title="Minecraft 官网"
+                                        href="https://www.minecraft.net/zh-hans"
+                                        >Minecraft</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        title="原神官网"
+                                        href="https://ys.mihoyo.com/"
+                                        >原神</a
+                                    >&nbsp;
+                                </li>
+                                <li>
+                                    <a title="osu!" href="https://osu.ppy.sh/"
+                                        >osu!</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        title="CS:GO"
+                                        href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/"
+                                        >CS:GO</a
+                                    >
+                                </li>
+                            </ul>
+                            <hr />
 
-                        <!-- <h2>Github Stats</h2>
+                            <!-- <h2>Github Stats</h2>
                         <img class="github-readme-stats-svg" title="github统计数据" name="github-readme-stats" src="https://github-readme-stats.vercel.app/api?username=Yang-qwq&locale=cn&show_icons=true&theme=vue&count_private=true"></img>
                         <hr /> -->
 
-                        <h2>技能</h2>
-                        <div class="skillbox">
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #ff0066 0%,
-                                        #ff00cc 100%
-                                        );
-                                        width: 20%;">
-                                    <span>Java</span>
+                            <h2>技能</h2>
+                            <div class="skillbox">
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #ff0066 0%,
+                                                #ff00cc 100%
+                                            );
+                                            width: 20%;
+                                        "
+                                    >
+                                        <span>Java</span>
+                                    </div>
+                                    <div class="skill-bar-percent">20%</div>
                                 </div>
-                                <div class="skill-bar-percent">20%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #000000 0%,
-                                        #8892bf 100%
-                                        );
-                                        width: 20%;">
-                                    <span>PHP</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #000000 0%,
+                                                #8892bf 100%
+                                            );
+                                            width: 20%;
+                                        "
+                                    >
+                                        <span>PHP</span>
+                                    </div>
+                                    <div class="skill-bar-percent">20%</div>
                                 </div>
-                                <div class="skill-bar-percent">20%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #3746a9 0%,
-                                        #3746a9 100%
-                                        );
-                                        width: 20%;">
-                                    <span>C/C++</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #3746a9 0%,
+                                                #3746a9 100%
+                                            );
+                                            width: 20%;
+                                        "
+                                    >
+                                        <span>C/C++</span>
+                                    </div>
+                                    <div class="skill-bar-percent">20%</div>
                                 </div>
-                                <div class="skill-bar-percent">20%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #3474a6 0%,
-                                        #ffd643 100%
-                                        );
-                                        width: 90%;">
-                                    <span>Python</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #3474a6 0%,
+                                                #ffd643 100%
+                                            );
+                                            width: 90%;
+                                        "
+                                    >
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="skill-bar-percent">90%</div>
                                 </div>
-                                <div class="skill-bar-percent">90%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #9900ff 0%,
-                                        #cc66ff 100%
-                                        );
-                                        width: 55%;">
-                                    <span>前端</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #9900ff 0%,
+                                                #cc66ff 100%
+                                            );
+                                            width: 55%;
+                                        "
+                                    >
+                                        <span>前端</span>
+                                    </div>
+                                    <div class="skill-bar-percent">55%</div>
                                 </div>
-                                <div class="skill-bar-percent">55%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #895527 0%,
-                                        #53b623 100%
-                                        );
-                                        width: 100%;">
-                                    <span>Minecraft</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #895527 0%,
+                                                #53b623 100%
+                                            );
+                                            width: 100%;
+                                        "
+                                    >
+                                        <span>Minecraft</span>
+                                    </div>
+                                    <div class="skill-bar-percent">100%</div>
                                 </div>
-                                <div class="skill-bar-percent">100%</div>
-                            </div>
-                            <div class="skillbar">
-                                <div class="skillbar-title" style="background:
-                                        linear-gradient(
-                                        to right,
-                                        #252525 0%,
-                                        #9c9e9c 100%
-                                        );
-                                        width: 70%;">
-                                    <span>备战中考</span>
+                                <div class="skillbar">
+                                    <div
+                                        class="skillbar-title"
+                                        style="
+                                            background: linear-gradient(
+                                                to right,
+                                                #252525 0%,
+                                                #9c9e9c 100%
+                                            );
+                                            width: 70%;
+                                        "
+                                    >
+                                        <span>备战中考</span>
+                                    </div>
+                                    <div class="skill-bar-percent">70%</div>
                                 </div>
-                                <div class="skill-bar-percent">70%</div>
                             </div>
-                        </div>
-                        <hr />
-                        <h2>工具箱</h2>
-                        <div class="tool">
-                            <a href="./windowsfx/" target="_blank" rel="noopener noreferrer">Windows Fix工具包</a>
-                            <a href="./minecraft-pack/" target="_blank" rel="noopener noreferrer">Minecraft packs
-                                cdn</a>
-                        </div>
-                        <div class="tool">
-                            <a href="https://www.chunkbase.com/" target="_blank" rel="noopener noreferrer">Chunk
-                                Base(Minecraft结构地形寻找器)</a>
-                            <a href="https://www.sojson.com/" target="_blank" rel="noopener noreferrer">sojson</a>
-                            <a href="https://c.runoob.com/" target="_blank" rel="noopener noreferrer">菜鸟工具</a>
-                            <a href="https://www.itdog.cn/" target="_blank" rel="noopener noreferrer">ITDOG</a>
-                        </div>
-                        <hr />
+                            <hr />
+                            <h2>工具箱</h2>
+                            <div class="tool">
+                                <a
+                                    href="./windowsfx/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Windows Fix工具包</a
+                                >
+                                <a
+                                    href="./minecraft-pack/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Minecraft packs cdn</a
+                                >
+                            </div>
+                            <div class="tool">
+                                <a
+                                    href="https://www.chunkbase.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Chunk Base(Minecraft结构地形寻找器)</a
+                                >
+                                <a
+                                    href="https://www.sojson.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >sojson</a
+                                >
+                                <a
+                                    href="https://c.runoob.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >菜鸟工具</a
+                                >
+                                <a
+                                    href="https://www.itdog.cn/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >ITDOG</a
+                                >
+                            </div>
+                            <hr />
 
-                        <h2>读书&刷题</h2>
-                        <div class="tool">
-                            <a href="https://www.r2coding.com/" target="_blank" rel="noopener noreferrer">编程自学之路</a>
-                            <a href="https://github.com/justjavac/free-programming-books-zh_CN/" target="_blank"
-                                rel="noopener noreferrer">编程中文书籍索引</a>
-                            <a href="https://leetcode-cn.com/problemset/all/" target="_blank"
-                                rel="noopener noreferrer">Leetcode</a>
-                            <a href="https://www.nowcoder.com/ta/coding-interviews" target="_blank"
-                                rel="noopener noreferrer">剑指 Offer</a>
-                        </div>
-                        <hr />
+                            <h2>读书&刷题</h2>
+                            <div class="tool">
+                                <a
+                                    href="https://www.r2coding.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >编程自学之路</a
+                                >
+                                <a
+                                    href="https://github.com/justjavac/free-programming-books-zh_CN/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >编程中文书籍索引</a
+                                >
+                                <a
+                                    href="https://leetcode-cn.com/problemset/all/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Leetcode</a
+                                >
+                                <a
+                                    href="https://www.nowcoder.com/ta/coding-interviews"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >剑指 Offer</a
+                                >
+                            </div>
+                            <hr />
 
-                        <h2>摸鱼</h2>
-                        <div class="tool">
-                            <a href="https://xingye.me/game/" target="_blank" rel="noopener noreferrer">网页小游戏列表</a>
-                            <a href="http://osugame.online/index.html" target="_blank" rel="noopener noreferrer">戳泡泡</a>
-                            <a href="https://www.yikm.net/" target="_blank" rel="noopener noreferrer">小霸王游戏</a>
-                            <a href="http://taiko.bui.pm/" target="_blank" rel="noopener noreferrer">太鼓达人</a>
+                            <h2>摸鱼</h2>
+                            <div class="tool">
+                                <a
+                                    href="https://xingye.me/game/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >网页小游戏列表</a
+                                >
+                                <a
+                                    href="http://osugame.online/index.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >戳泡泡</a
+                                >
+                                <a
+                                    href="https://www.yikm.net/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >小霸王游戏</a
+                                >
+                                <a
+                                    href="http://taiko.bui.pm/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >太鼓达人</a
+                                >
+                            </div>
                         </div>
+                    </article>
+                </div>
+            </main>
+            <footer id="footer">
+                <div id="footer-wrap">
+                    <div class="copyright">
+                        &copy;Yang 2019 - 2022 | Powered by
+                        <a
+                            target="_blank"
+                            href="https://github.com/mrxur/home"
+                            rel="noopener noreferrer"
+                            >mrxur/home</a
+                        >&nbsp;
+                        <a
+                            target="_blank"
+                            href="sitemap.xml"
+                            rel="noopener noreferrer"
+                            >Sitemap.xml</a
+                        >&nbsp;
+                        <a
+                            target="_blank"
+                            href="https://github.yang-qwq.ml/"
+                            rel="noopener noreferrer"
+                            >github镜像站</a
+                        >
                     </div>
-                </article>
-            </div>
-        </main>
-        <footer id="footer">
-            <div id="footer-wrap">
-                <div class="copyright">
-                    &copy;Yang 2019 - 2022 | Powered by
-                    <a target="_blank" href="https://github.com/mrxur/home"
-                        rel="noopener noreferrer">mrxur/home</a>&nbsp;
-                    <a target="_blank" href="sitemap.xml" rel="noopener noreferrer">Sitemap.xml</a>&nbsp;
-                    <a target="_blank" href="https://github.yang-qwq.ml/" rel="noopener noreferrer">github镜像站</a>
+                    <div>
+                        本站CDN服务由<a
+                            target="_blank"
+                            href="https://www.cloudflare.com/zh-cn/"
+                            rel="noopener noreferrer"
+                            >CloudFlare</a
+                        >提供&nbsp;
+                        <a
+                            href="https://icp.gov.moe/?keyword=20220385"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >萌ICP备20220385号</a
+                        >
+                    </div>
                 </div>
-                <div>
-                    本站CDN服务由<a target="_blank" href="https://www.cloudflare.com/zh-cn/"
-                        rel="noopener noreferrer">CloudFlare</a>提供&nbsp;
-                    <a href="https://icp.gov.moe/?keyword=20220385" target="_blank"
-                        rel="noopener noreferrer">萌ICP备20220385号</a>
-                </div>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
 
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script async src="https://unpkg.com/instant.page@5.1.0/instantpage.js" type="module"
-        crossorigin="anonymous"></script>
-    <script async src="https://unpkg.com/lazysizes@5.2.0/lazysizes.min.js" crossorigin="anonymous"></script>
+        <script
+            async
+            src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+        ></script>
+        <script
+            async
+            src="https://unpkg.com/instant.page@5.1.0/instantpage.js"
+            type="module"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            async
+            src="https://unpkg.com/lazysizes@5.2.0/lazysizes.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- APlayer -->
-    <script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js" crossorigin="anonymous"></script>
-    <!-- MetingJS -->
-    <script defer src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js" crossorigin="anonymous"></script>
+        <!-- APlayer -->
+        <script
+            defer
+            src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- MetingJS -->
+        <script
+            defer
+            src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- nplayer -->
-    <script defer src="https://unpkg.com/nplayer@1.0.10/dist/index.min.js" crossorigin="anonymous"></script>
+        <!-- nplayer -->
+        <script
+            defer
+            src="https://unpkg.com/nplayer@1.0.10/dist/index.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <!-- 一言、今日诗词 -->
-    <script async src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" crossorigin="anonymous"></script>
-    <script async src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        <!-- 一言、今日诗词 -->
+        <script
+            async
+            src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            async
+            src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
+            charset="utf-8"
+        ></script>
 
-    <!-- 看板娘 -->
-    <script defer async src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js"
-        crossorigin="anonymous"></script>
+        <!-- 看板娘 -->
+        <script
+            defer
+            async
+            src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.min.js"
+            crossorigin="anonymous"
+        ></script>
 
-    <script type="text/javascript" defer async>
-        console.log(
-            "%c 有朋自远方来, 不亦说乎.",
-            "background:#24272A; color:#ffffff",
-            ""
-        );
-        console.log(
-            "%c Github %c",
-            "background:#24272A; color:#ffffff",
-            "",
-            "https://github.com/laoxuai"
-        );
-        console.log(
-            "%c 版本号: %c",
-            "background:#24272A; color:#ffffff",
-            "",
-            "1.0.0"
-        );
-    </script>
-    <script async>
-        (function ($) {
-            $.fn.snow = function (options) {
-                var $flake = $('<div id="snowbox" />')
-                    .css({
-                        position: "absolute",
-                        "z-index": "9999",
-                        top: "-50px"
-                    })
-                    .html("&#10052;"),
-                    documentHeight = $(document).height(),
-                    documentWidth = $(document).width(),
-                    defaults = {
-                        minSize: 10,
-                        maxSize: 20,
-                        newOn: 1000,
-                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */,
-                    },
-                    options = $.extend({}, defaults, options);
-                var interval = setInterval(function () {
-                    var startPositionLeft = Math.random() * documentWidth - 100,
-                        startOpacity = 0.5 + Math.random(),
-                        sizeFlake = options.minSize + Math.random() * options.maxSize,
-                        endPositionTop = documentHeight - 200,
-                        endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
-                        durationFall = documentHeight * 10 + Math.random() * 5000;
-                    $flake
-                        .clone()
-                        .appendTo("body")
-                        .css({
-                            left: startPositionLeft,
-                            opacity: startOpacity,
-                            "font-size": sizeFlake,
-                            color: options.flakeColor,
-                        })
-                        .animate({
-                            top: endPositionTop,
-                            left: endPositionLeft,
-                            opacity: 0.2,
+        <script type="text/javascript" defer async>
+            console.log(
+                "%c 有朋自远方来, 不亦说乎.",
+                "background:#24272A; color:#ffffff",
+                ""
+            );
+            console.log(
+                "%c Github %c",
+                "background:#24272A; color:#ffffff",
+                "",
+                "https://github.com/laoxuai"
+            );
+            console.log(
+                "%c 版本号: %c",
+                "background:#24272A; color:#ffffff",
+                "",
+                "1.0.0"
+            );
+        </script>
+        <script async>
+            qwq;
+            (function ($) {
+                $.fn.snow = function (options) {
+                    var $flake = $('<div id="snowbox" />')
+                            .css({
+                                position: "absolute",
+                                "z-index": "9999",
+                                top: "-50px",
+                            })
+                            .html("&#10052;"),
+                        documentHeight = $(document).height(),
+                        documentWidth = $(document).width(),
+                        defaults = {
+                            minSize: 10,
+                            maxSize: 20,
+                            newOn: 1000,
+                            flakeColor:
+                                "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */,
                         },
-                            durationFall,
-                            "linear",
-                            function () {
-                                $(this).remove();
-                            }
-                        );
-                }, options.newOn);
-            };
-        })(jQuery);
+                        options = $.extend({}, defaults, options);
+                    var interval = setInterval(function () {
+                        var startPositionLeft =
+                                Math.random() * documentWidth - 100,
+                            startOpacity = 0.5 + Math.random(),
+                            sizeFlake =
+                                options.minSize +
+                                Math.random() * options.maxSize,
+                            endPositionTop = documentHeight - 200,
+                            endPositionLeft =
+                                startPositionLeft - 500 + Math.random() * 500,
+                            durationFall =
+                                documentHeight * 10 + Math.random() * 5000;
+                        $flake
+                            .clone()
+                            .appendTo("body")
+                            .css({
+                                left: startPositionLeft,
+                                opacity: startOpacity,
+                                "font-size": sizeFlake,
+                                color: options.flakeColor,
+                            })
+                            .animate(
+                                {
+                                    top: endPositionTop,
+                                    left: endPositionLeft,
+                                    opacity: 0.2,
+                                },
+                                durationFall,
+                                "linear",
+                                function () {
+                                    $(this).remove();
+                                }
+                            );
+                    }, options.newOn);
+                };
+            })(jQuery);
 
-        $(function () {
-            $.fn.snow({
-                minSize: 5 /* 定义雪花最小尺寸 */,
-                maxSize: 50 /* 定义雪花最大尺寸 */,
-                newOn: 800 /* 定义密集程度，数字越小越密集 */,
+            $(function () {
+                $.fn.snow({
+                    minSize: 5 /* 定义雪花最小尺寸 */,
+                    maxSize: 50 /* 定义雪花最大尺寸 */,
+                    newOn: 800 /* 定义密集程度，数字越小越密集 */,
+                });
             });
-        });
-    </script>
-    <script>
-        function descTime(time, id) {
-            // let format = '2022-5-5 00:00:00'
-            let s = new Date(time).getTime()
-            let timeDtart = new Date().getTime()
-            let start = s - timeDtart
-            let day = Math.floor(start / (3600 * 24 * 1000))
-            let hour = Math.floor(start / (1000 * 3600) % 24) // 取余一天24小时
-            let min = Math.floor(start / (1000 * 30) % 60) // 取余一小时60分钟
-            let sec = Math.floor(start / (1000) % 60) // 取余一分钟60秒
-            if (day >= 0) {
-                id.innerHTML = day + "天" + hour + "时" + min + "分" + sec + "秒"
-            } else {
-                id.innerHTML = '倒计时结束！'
+        </script>
+        <script>
+            function descTime(time, id) {
+                // let format = '2022-5-5 00:00:00'
+                let s = new Date(time).getTime();
+                let timeDtart = new Date().getTime();
+                let start = s - timeDtart;
+                let day = Math.floor(start / (3600 * 24 * 1000));
+                let hour = Math.floor((start / (1000 * 3600)) % 24); // 取余一天24小时
+                let min = Math.floor((start / (1000 * 30)) % 60); // 取余一小时60分钟
+                let sec = Math.floor((start / 1000) % 60); // 取余一分钟60秒
+                if (day >= 0) {
+                    id.innerHTML =
+                        day + "天" + hour + "时" + min + "分" + sec + "秒";
+                } else {
+                    id.innerHTML = "倒计时结束！";
+                }
             }
 
-        }
-
-        function ascTime(time, id) {
-            // let start = "2021-12-19 08:00:00";
-            let startTime = new Date(time).getTime();
-            let currentTime = new Date().getTime();
-            let difference = currentTime - startTime;
-            let m = Math.floor(difference / 1000);
-            let mm = m % 60; // 秒
-            let f = Math.floor(m / 60);
-            let ff = f % 60; // 分钟
-            let s = Math.floor(f / 60); // 小时
-            let ss = s % 24;
-            let day = Math.floor(s / 24); // 天数
-            id.innerHTML = day + "天" + ss + "时" + ff + "分" + mm + "秒";
-        }
-
-        setInterval(() => {
-            descTime('2023-5-5 00:00:00', document.getElementById('domainexpiredtimer'))
-        }, 1000)
-
-        setInterval(() => {
-            descTime('2024-1-15 11:06:37', document.getElementById('domainexpiredtimer_2'))
-        }, 1000)
-
-        setInterval(() => {
-            ascTime("2021-12-19 08:00:00", document.getElementById("onlinetimer"));
-        }, 1000);
-    </script>
-    <script>
-        // 标题Typed
-        new Typed(".blogtitle", {
-            strings: [
-                "阳的个人站",
-                "一个正在编程路上摸爬滚打的初中学生",
-                "一个正在备战中考的初中学生",
-                "Yang yyds!",
-                'echo "Hello, World!"',
-                "记得常去友链里看看",
-                "别忘了给我留言",
-                "欸嘿是什么意思啊？",
-                "中考加油！"
-            ],
-            startDelay: 300,
-            typeSpeed: 85,
-            loop: true,
-            backSpeed: 50,
-            showCursor: true,
-        });
-    </script>
-    <script async>
-        // 浏览器搞笑标题
-        var OriginTitle = document.title;
-        var titleTime;
-        document.addEventListener("visibilitychange", function () {
-            if (document.hidden) {
-                // $('[rel="icon"]').attr('href', "static/img/wtf.ico");
-                document.title = "╭(°A°`)╮ 页面崩溃啦 ~";
-                clearTimeout(titleTime);
-            } else {
-                // $('[rel="icon"]').attr('href', "static/img/favicon.ico");
-                document.title = "(ฅ>ω<*ฅ) 噫又好啦 ~" + OriginTitle;
-                titleTime = setTimeout(function () {
-                    document.title = OriginTitle;
-                }, 2000);
+            function ascTime(time, id) {
+                // let start = "2021-12-19 08:00:00";
+                let startTime = new Date(time).getTime();
+                let currentTime = new Date().getTime();
+                let difference = currentTime - startTime;
+                let m = Math.floor(difference / 1000);
+                let mm = m % 60; // 秒
+                let f = Math.floor(m / 60);
+                let ff = f % 60; // 分钟
+                let s = Math.floor(f / 60); // 小时
+                let ss = s % 24;
+                let day = Math.floor(s / 24); // 天数
+                id.innerHTML = day + "天" + ss + "时" + ff + "分" + mm + "秒";
             }
-        });
 
-        // 检查域名
-        if (document.domain == 'yang-qwq.ml') {
-            swal("本站有新域名了！", "请查看页脚获取详细内容", "info");
-            document.getElementById('footer-wrap').insertAdjacentHTML("beforeend", "<div><a href='https://yang-qwq.top/' \
-                title='感谢wyx的大力赞助！' target='_self' rel='noopener noreferrer'>前往新域名</a></div>")
-        } else if (document.domain == 'yang-qwq.top') {
-            swal("欢迎使用新域名访问~", "感谢wyx的大力赞助！", "success")
-        }
-    </script>
-    <script async>
-        new Calendar({
-            // 设置显示位置
-            parent: "dates-view",
-            // 初始化显示时间
-            time: new Date().Format("yyyy-MM-dd"),
-            hasClock: false,
-            // viewMode：
-            // 0 - 日期模式（默认值）
-            viewMode: 0,
-        });
-    </script>
-    <script>
-        // 基于js的点击事件
-        $("#website_board").on("click", function () {
-            window.open("https://board.yang-qwq.ml/", "_self");
-        });
+            setInterval(() => {
+                descTime(
+                    "2023-5-5 00:00:00",
+                    document.getElementById("domainexpiredtimer")
+                );
+            }, 1000);
 
-        $("#website_block_server_wiki").on("click", function () {
-            window.open("./block-server-wiki/", "_self");
-        });
+            setInterval(() => {
+                descTime(
+                    "2024-1-15 11:06:37",
+                    document.getElementById("domainexpiredtimer_2")
+                );
+            }, 1000);
 
-        $("#website_status").on("click", function () {
-            window.open("https://stats.uptimerobot.com/kKoX9ukrwm", "_blank");
-        });
+            setInterval(() => {
+                ascTime(
+                    "2021-12-19 08:00:00",
+                    document.getElementById("onlinetimer")
+                );
+            }, 1000);
+        </script>
+        <script>
+            // 标题Typed
+            new Typed(".blogtitle", {
+                strings: [
+                    "阳的个人站",
+                    "一个正在编程路上摸爬滚打的初中学生",
+                    "一个正在备战中考的初中学生",
+                    "Yang yyds!",
+                    'echo "Hello, World!"',
+                    "记得常去友链里看看",
+                    "别忘了给我留言",
+                    "欸嘿是什么意思啊？",
+                    "中考加油！",
+                ],
+                startDelay: 300,
+                typeSpeed: 85,
+                loop: true,
+                backSpeed: 50,
+                showCursor: true,
+            });
+        </script>
+        <script async>
+            // 浏览器搞笑标题
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener("visibilitychange", function () {
+                if (document.hidden) {
+                    // $('[rel="icon"]').attr('href', "static/img/wtf.ico");
+                    document.title = "╭(°A°`)╮ 页面崩溃啦 ~";
+                    clearTimeout(titleTime);
+                } else {
+                    // $('[rel="icon"]').attr('href', "static/img/favicon.ico");
+                    document.title = "(ฅ>ω<*ฅ) 噫又好啦 ~" + OriginTitle;
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitle;
+                    }, 2000);
+                }
+            });
 
-        $("#cloudreve").on("click", function () {
-            window.open("http://cloudreve.yang-qwq.ml/", "_blank");
-        });
-    </script>
-    <!-- <script>
+            // 检查域名
+            if (document.domain == "yang-qwq.ml") {
+                swal("本站有新域名了！", "请查看页脚获取详细内容", "info");
+                document.getElementById("footer-wrap").insertAdjacentHTML(
+                    "beforeend",
+                    "<div><a href='https://yang-qwq.top/' \
+                title='感谢wyx的大力赞助！' target='_self' rel='noopener noreferrer'>前往新域名</a></div>"
+                );
+            } else if (document.domain == "yang-qwq.top") {
+                swal("欢迎使用新域名访问~", "感谢wyx的大力赞助！", "success");
+            }
+        </script>
+        <script async>
+            new Calendar({
+                // 设置显示位置
+                parent: "dates-view",
+                // 初始化显示时间
+                time: new Date().Format("yyyy-MM-dd"),
+                hasClock: false,
+                // viewMode：
+                // 0 - 日期模式（默认值）
+                viewMode: 0,
+            });
+        </script>
+        <script>
+            // 基于js的点击事件
+            $("#website_board").on("click", function () {
+                window.open("https://board.yang-qwq.ml/", "_self");
+            });
+
+            $("#website_block_server_wiki").on("click", function () {
+                window.open("./block-server-wiki/", "_self");
+            });
+
+            $("#website_status").on("click", function () {
+                window.open(
+                    "https://stats.uptimerobot.com/kKoX9ukrwm",
+                    "_blank"
+                );
+            });
+
+            $("#cloudreve").on("click", function () {
+                window.open("http://cloudreve.yang-qwq.ml/", "_blank");
+            });
+        </script>
+        <!-- <script>
         // 复制uid
         var uidClipboard = new ClipboardJS('.copy-genshin-uid');
 
@@ -677,6 +992,5 @@
             swal("Oops...", "复制出现错误！", "error")
         });
     </script> -->
-</body>
-
+    </body>
 </html>
