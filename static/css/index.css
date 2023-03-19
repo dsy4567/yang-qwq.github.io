@@ -94,7 +94,7 @@ strong {
     position: relative;
     margin-top: -2rem;
     width: 100%;
-    background-color: #49b1f5;
+    background-color: #66ccff;
     background-attachment: local;
     background-position: center;
     background-size: cover;
@@ -237,12 +237,17 @@ a {
     color: #ff0066;
 }
 
+.box a {
+    color: currentcolor;
+    text-decoration: none;
+}
+
 .is-center {
     text-align: center;
 }
 
 .box {
-    color: #000 !important;
+    color: #4c4948;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -444,6 +449,10 @@ aside_content .card-info .author-info__description {
     background-color: transparent;
 }
 
+.cal-switcher {
+    font-size: initial !important;
+}
+
 /* 自适应深色主题 */
 
 @media (prefers-color-scheme: dark) {
@@ -451,8 +460,18 @@ aside_content .card-info .author-info__description {
     #page {
         background-color: #333 !important;
     }
+
     body {
         background-color: #111 !important;
+        color: #eee !important;
+    }
+
+    hr {
+        border: 2px dashed #1f97af !important;
+        background: #202020;
+    }
+
+    .fa {
         color: #eee !important;
     }
 
@@ -465,11 +484,61 @@ aside_content .card-info .author-info__description {
     }
 
     .cal-md {
-        background-color: #111 !important;
+        background-color: #333 !important;
     }
-    /* .cal-year,
-    .cal-month,
+
+    .cal-hd {
+        border-bottom: 1px solid #111 !important;
+    }
+
+    .cal-ft {
+        border-top: 1px solid #111 !important;
+    }
+
     .cal-date {
         color: #eee !important;
-    } */
+    }
+
+    .cal-date-prev,
+    .cal-date-next {
+        color: #aaa !important;
+        background-color: #333 !important;
+    }
+
+    .cal-weekend {
+        color: #e24144 !important;
+    }
+
+    .aplayer {
+        background-color: #333 !important;
+    }
+
+    .aplayer.aplayer-withlist .aplayer-info {
+        border-bottom: 1px solid #111 !important;
+    }
+
+    .aplayer-loaded {
+        background-color: #555 !important;
+    }
+
+    .aplayer-bar {
+        background-color: #111 !important;
+    }
+
+    .aplayer .aplayer-lrc:before {
+        background: linear-gradient(180deg, #111 0, #1110) !important;
+    }
+
+    .aplayer .aplayer-lrc:after {
+        background: linear-gradient(180deg, #1110 0, #111c) !important;
+    }
+
+    .aplayer .aplayer-list ol li {
+        border-top: 1px solid #111 !important;
+    }
+
+    .aplayer .aplayer-list ol li:hover,
+    .aplayer .aplayer-list ol li.aplayer-list-light {
+        background-color: #111 !important;
+    }
 }

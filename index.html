@@ -135,7 +135,7 @@
                                     <a
                                         title="github"
                                         class="social-icon"
-                                        href="https://github.com/Yang_161941"
+                                        href="https://github.com/Yang_qwq"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -319,7 +319,13 @@
                                     id="website_board"
                                     style="background-color: rgb(255, 248, 172)"
                                 >
-                                    <h2>留言板</h2>
+                                    <h2>
+                                        <a
+                                            href="https://board.yang-qwq.ml/"
+                                            target="_self"
+                                            >留言板</a
+                                        >
+                                    </h2>
                                     <p>新框架留言板，给你一个全新的体验</p>
                                 </div>
 
@@ -330,7 +336,13 @@
                                     id="website_block_server_wiki"
                                     style="background-color: #4abf8a"
                                 >
-                                    <h2>方块元玩家文档</h2>
+                                    <h2>
+                                        <a
+                                            href="./block-server-wiki/"
+                                            target="_self"
+                                            >方块元玩家文档</a
+                                        >
+                                    </h2>
                                     <s>方块元玩家文档</s>
                                 </div>
 
@@ -342,7 +354,11 @@
                                     style="background-color: rgb(59, 214, 113)"
                                 >
                                     <h2>
-                                        服务器在线状态<i
+                                        <a
+                                            href="https://stats.uptimerobot.com/kKoX9ukrwm"
+                                            target="_blank"
+                                            >服务器在线状态</a
+                                        ><i
                                             class="fa fa-fw fa-external-link"
                                             aria-hidden="true"
                                         ></i>
@@ -357,7 +373,13 @@
                                     id="cloudreve"
                                     style="background-color: rgb(65, 125, 255)"
                                 >
-                                    <h2>我的私人网盘</h2>
+                                    <h2>
+                                        <a
+                                            href="https://cloudreve.yang-qwq.ml/"
+                                            target="_blank"
+                                            >我的私人网盘</a
+                                        >
+                                    </h2>
                                     <s>你或许可以试着进一下？</s>
                                 </div>
                             </div>
@@ -957,23 +979,27 @@
         </script>
         <script>
             // 基于js的点击事件
-            $("#website_board").on("click", function () {
-                window.open("https://board.yang-qwq.ml/", "_self");
+            $("#website_board").on("click", function (ev) {
+                ev.target.tagName !== "A" &&
+                    window.open("https://board.yang-qwq.ml/", "_self");
             });
 
-            $("#website_block_server_wiki").on("click", function () {
-                window.open("./block-server-wiki/", "_self");
+            $("#website_block_server_wiki").on("click", function (ev) {
+                ev.target.tagName !== "A" &&
+                    window.open("./block-server-wiki/", "_self");
             });
 
-            $("#website_status").on("click", function () {
-                window.open(
-                    "https://stats.uptimerobot.com/kKoX9ukrwm",
-                    "_blank"
-                );
+            $("#website_status").on("click", function (ev) {
+                ev.target.tagName !== "A" &&
+                    window.open(
+                        "https://stats.uptimerobot.com/kKoX9ukrwm",
+                        "_blank"
+                    );
             });
 
-            $("#cloudreve").on("click", function () {
-                window.open("http://cloudreve.yang-qwq.ml/", "_blank");
+            $("#cloudreve").on("click", function (ev) {
+                ev.target.tagName !== "A" &&
+                    window.open("http://cloudreve.yang-qwq.ml/", "_blank");
             });
         </script>
         <!-- <script>
